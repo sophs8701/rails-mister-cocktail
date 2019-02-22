@@ -8,6 +8,7 @@
 
 require 'open-uri'
 require 'json'
+require 'faker'
 
 url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
 ingredients = JSON.parse(open(url).read)
@@ -24,3 +25,11 @@ end
 # }
 
 # name[first]
+
+30.times { Cocktail.create(name: Faker::Dessert.flavor) }
+
+
+# Cocktail.create(name: "manhatten")
+# Cocktail.create(name: "whisky sour")
+# Cocktail.create(name: "cherry sour")
+# Cocktail.create(name: "negroni")
